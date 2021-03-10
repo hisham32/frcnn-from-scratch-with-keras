@@ -151,10 +151,10 @@ C.num_rois = int(options.num_rois)
 
 if K.image_dim_ordering() == 'th':
 	input_shape_img = (3, None, None)
-	input_shape_features = (1024, None, None)
+	input_shape_features = (512, None, None)
 else:
 	input_shape_img = (None, None, 3)
-	input_shape_features = (None, None, 1024)
+	input_shape_features = (None, None, 512)
 
 
 img_input = Input(shape=input_shape_img)
