@@ -62,7 +62,7 @@ def get_map(pred, gt, f):
 		T[pred_class].append(int(found_match))
 
 	for gt_box in gt:
-		if not gt_box['bbox_matched'] and not gt_box['difficult']:
+		if not gt_box['bbox_matched']:
 			if gt_box['class'] not in P:
 				P[gt_box['class']] = []
 				T[gt_box['class']] = []
@@ -102,7 +102,7 @@ else:
 
 config_output_filename = options.config_filename
 
-with open(config_output_filename, 'r') as f_in:
+with open(config_output_filename, 'rb') as f_in:
 	C = pickle.load(f_in)
 
 # turn off any data augmentation at test time
