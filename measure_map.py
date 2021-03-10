@@ -62,7 +62,7 @@ def get_map(pred, gt, f):
 		T[pred_class].append(int(found_match))
 
 	for gt_box in gt:
-		if not gt_box['bbox_matched']:#and not gt_box['difficult']:
+		if not gt_box['bbox_matched']: #and not gt_box['difficult']:
 			if gt_box['class'] not in P:
 				P[gt_box['class']] = []
 				T[gt_box['class']] = []
@@ -151,10 +151,10 @@ C.num_rois = int(options.num_rois)
 
 if K.image_dim_ordering() == 'th':
 	input_shape_img = (3, None, None)
-	input_shape_features = (512, None, None)
+	input_shape_features = (1024, None, None)
 else:
 	input_shape_img = (None, None, 3)
-	input_shape_features = (None, None, 512)
+	input_shape_features = (None, None, 1024)
 
 
 img_input = Input(shape=input_shape_img)
